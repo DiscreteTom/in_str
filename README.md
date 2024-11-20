@@ -3,6 +3,8 @@
 [![Crates.io Version](https://img.shields.io/crates/v/in_str?style=flat-square)](https://crates.io/crates/in_str)
 ![license](https://img.shields.io/github/license/DiscreteTom/in_str?style=flat-square)
 
+A procedural macro to generate a closure that checks if a character is in the provided literal string.
+
 ```rs
 use in_str::in_str;
 
