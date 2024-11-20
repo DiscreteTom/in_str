@@ -1,0 +1,14 @@
+[package]
+name = "in_str"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["DiscreteTom <discrete_tom@outlook.com>"]
+repository = "https://github.com/DiscreteTom/in_str"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = "1.0"
+quote = "1.0"
