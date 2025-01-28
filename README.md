@@ -19,4 +19,13 @@ let _ = |c: char| "abc".contains(c);
 let _ = in_str!("\n\u{10ffff}");
 // equals to
 let _ = |c: char| matches!(c, '\n' | '\u{10ffff}');
+
+// also works with byte strings
+let _ = in_str!(b"abc");
+// equals to
+let _ = |c: u8| matches!(c, b'a' | b'b' | b'c');
+// escape will be handled automatically
+let _ = in_str!(b"\n\xff");
+// equals to
+let _ = |c: u8| matches!(c, b'\n' | 0xff);
 ```
