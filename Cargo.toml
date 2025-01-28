@@ -1,7 +1,7 @@
 [package]
 name = "in_str"
 description = "A procedural macro to generate a closure that checks if a character is in the provided literal string."
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 authors = ["DiscreteTom <discrete_tom@outlook.com>"]
