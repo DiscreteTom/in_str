@@ -6,6 +6,14 @@
 
 A procedural macro to generate a closure that checks if a character is in the provided literal string.
 
+## Installation
+
+```bash
+cargo add in_str
+```
+
+## Usage
+
 ```rust
 use in_str::in_str;
 
@@ -29,3 +37,7 @@ let _ = in_str!(b"\n\xff");
 // equals to
 let _ = |c: u8| matches!(c, b'\n' | 0xff);
 ```
+
+## [Documentation](https://docs.rs/in_str/)
+
+## [CHANGELOG](./CHANGELOG.md)
