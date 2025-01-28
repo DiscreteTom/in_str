@@ -1,11 +1,12 @@
 # `in_str!`
 
-[![Crates.io Version](https://img.shields.io/crates/v/in_str?style=flat-square)](https://crates.io/crates/in_str)
 ![license](https://img.shields.io/github/license/DiscreteTom/in_str?style=flat-square)
+[![Crates.io Version](https://img.shields.io/crates/v/in_str?style=flat-square)](https://crates.io/crates/in_str)
+[![docs.rs](https://img.shields.io/docsrs/in_str?style=flat-square)](https://docs.rs/in_str/)
 
 A procedural macro to generate a closure that checks if a character is in the provided literal string.
 
-```rs
+```rust
 use in_str::in_str;
 
 let _ = in_str!("abc");
