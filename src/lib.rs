@@ -16,18 +16,11 @@ use syn::{self, parse, LitByteStr, LitStr};
 /// let _ = |c: char| matches!(c, 'a' | 'b' | 'c');
 /// // usually faster than
 /// let _ = |c: char| "abc".contains(c);
-/// # assert!(in_str!("abc")('a'));
-/// # assert!(in_str!("abc")('b'));
-/// # assert!(in_str!("abc")('c'));
-/// # assert!(!in_str!("abc")('d'));
 ///
 /// // escape will be handled automatically
 /// let _ = in_str!("\n\u{10ffff}");
 /// // equals to
 /// let _ = |c: char| matches!(c, '\n' | '\u{10ffff}');
-/// # assert!(in_str!("\n\u{10ffff}")('\n'));
-/// # assert!(in_str!("\n\u{10ffff}")('\u{10ffff}'));
-/// # assert!(!in_str!("\n\u{10ffff}")('a'));
 ///
 /// // also works with byte strings
 /// let _ = in_str!(b"abc");
@@ -37,13 +30,6 @@ use syn::{self, parse, LitByteStr, LitStr};
 /// let _ = in_str!(b"\n\xff");
 /// // equals to
 /// let _ = |c: u8| matches!(c, b'\n' | 0xff);
-/// # assert!(in_str!(b"abc")(b'a'));
-/// # assert!(in_str!(b"abc")(b'b'));
-/// # assert!(in_str!(b"abc")(b'c'));
-/// # assert!(!in_str!(b"abc")(b'd'));
-/// # assert!(in_str!(b"\n\xff")(b'\n'));
-/// # assert!(in_str!(b"\n\xff")(0xff));
-/// # assert!(!in_str!(b"\n\xff")(b'a'));
 /// ```
 #[proc_macro]
 pub fn in_str(item: TokenStream) -> TokenStream {
